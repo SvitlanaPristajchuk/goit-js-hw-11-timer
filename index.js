@@ -43,23 +43,24 @@ class TimeValue {
            console.log('Parameter is null or undefined.');    
         }  
       this.value = value;
-  }        
+    }        
   
- Value() {
-      let time = this.value - Date.now();
+    Value() {
+        let time = this.value - Date.now();
 
-      let days = pad(Math.floor(time / (1000 * 60 * 60 * 24)));
-      let hours = pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-      let mins = pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
-      let secs = pad(Math.floor((time % (1000 * 60)) / 1000));
+        let days = pad(Math.floor(time / (1000 * 60 * 60 * 24)));
+        let hours = pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+        let mins = pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
+        let secs = pad(Math.floor((time % (1000 * 60)) / 1000));
 
-      return { days, hours, mins, secs };
-  }
+        return { days, hours, mins, secs };
+    }
 }
 
 function pad(value) {
     return String(value).padStart(2, '0');
 }
+
 const CountDownTimer = new Timer({
     selector: '#timer-1',
     targetDate: new Date('August 17, 2021'),
